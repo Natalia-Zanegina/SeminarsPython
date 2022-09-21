@@ -120,6 +120,7 @@ from random import randint
 # Задача 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных. Входные и выходные данные
 # хранятся в отдельных текстовых файлах.
 
+# Модуль сжатия
 # task = str()
 
 # path = 'data_task4.txt'
@@ -148,4 +149,30 @@ from random import randint
 # with open('result_task4.txt', 'w') as data:
 #     data.write(result)
 
+# Модуль восстановления
+task = str()
+
+path = 'result_task4.txt'
+data = open(path, 'r')
+for line in data:
+    task = line
+data.close()
+
+task += ' '
+item = str()
+num = str()
+result = str()
+
+for i in task:
+    if not i.isdigit():
+        if len(num) != 0 or i == ' ':
+            result += int(num) * item
+            item = i
+            num = str()
+        else: item = i
+    else:
+        num += i
+
+with open('recovery_task4.txt', 'w') as data:
+    data.write(result)
 
