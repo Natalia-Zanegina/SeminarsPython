@@ -76,35 +76,45 @@ from random import randint
 #     matrix[step_row][step_column] = sign
 
 #     if step_row == 0:
-#         player.add(step_column)
+#         player.add(str(step_column))
 #     elif step_row == 1:
-#         player.add(step_column + len(matrix))
+#         player.add(str(step_column + len(matrix)))
 #     else:
-#         player.add(step_column + 2*len(matrix))
+#         player.add(str(step_column + 2*len(matrix)))
     
 #     Show_Matrix(matrix)
-#     if player in winning_combinations:
-#         print('Победа игрока за {}!'.format(sign))
+
+# def Checking(player):
+#     global winning_combinations
+#     for i in winning_combinations:
+#         if i.issubset(player):
+#             return True
+#     return False
 
 # matrix = [['*', '*', '*'], ['*', '*', '*'], ['*', '*', '*']]
 # Show_Matrix(matrix)
 
-# winning_combinations = [{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}]
+# winning_combinations = [{'0', '1', '2'}, {'3', '4', '5'}, {'6', '7', '8'}, {'0', '3', '6'}, {'1', '4', '7'}, {'2', '5', '8'}, {'0', '4', '8'}, {'2', '4', '6'}]
 
 # sign_x = 'X'
 # sign_0 = '0'
 # player_X = set()
 # player_0 = set()
 
-
-# while True:
+# for i in range(5):
 #     Steps(sign_x, player_X)
-#     if player_X in winning_combinations:
+#     if Checking(player_X):
+#         print('Победили крестики!')
 #         break
 #     else:
-#         Steps(sign_0, player_0)
-#         if player_0 in winning_combinations:
-#             break
+#         if i != 4:
+#             Steps(sign_0, player_0)
+#             if Checking(player_0):
+#                 print('Победили нолики!')
+#                 break
+#         else:
+#             print('Ничья!')
+    
 
 
 # Задача 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных. Входные и выходные данные
