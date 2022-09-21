@@ -8,6 +8,8 @@ from random import randint
 # a) Добавьте игру против бота
 # b) Подумайте как наделить бота ""интеллектом""
 
+# Игра против бота с интеллектом:
+
 # def Users_steps():
 #     global count
 #     step = int(input('Сколько конфет Вы забираете? '))
@@ -51,6 +53,28 @@ from random import randint
 #         Bots_steps()
 #         if count > 0:
 #             Users_steps()
+
+# Игра человек против человека
+
+# def Users_steps(user):
+#     global count
+#     print('Ходит {}: '.format(user))
+#     step = int(input('Сколько конфет Вы забираете? '))
+#     count -= step
+#     if count <= 0:
+#         print("Выиграл {}!".format(user))
+#     else:
+#         print('Осталось {} конфет'.format(count))
+
+# count = 100
+# max_step = 28
+# user1 = 'первый игрок'
+# user2 = 'второй игрок'
+
+# while count > 0:
+#     Users_steps(user1)
+#     if count > 0:
+#         Users_steps(user2)
 
 
 # Задача 3. Создайте программу для игры в ""Крестики-нолики"".
@@ -150,29 +174,29 @@ from random import randint
 #     data.write(result)
 
 # Модуль восстановления
-task = str()
+# task = str()
 
-path = 'result_task4.txt'
-data = open(path, 'r')
-for line in data:
-    task = line
-data.close()
+# path = 'result_task4.txt'
+# data = open(path, 'r')
+# for line in data:
+#     task = line
+# data.close()
 
-task += ' '
-item = str()
-num = str()
-result = str()
+# task += ' '
+# item = str()
+# num = str()
+# result = str()
 
-for i in task:
-    if not i.isdigit():
-        if len(num) != 0 or i == ' ':
-            result += int(num) * item
-            item = i
-            num = str()
-        else: item = i
-    else:
-        num += i
+# for i in task:
+#     if not i.isdigit():
+#         if len(num) != 0 or i == ' ':
+#             result += int(num) * item
+#             item = i
+#             num = str()
+#         else: item = i
+#     else:
+#         num += i
 
-with open('recovery_task4.txt', 'w') as data:
-    data.write(result)
+# with open('recovery_task4.txt', 'w') as data:
+#     data.write(result)
 
