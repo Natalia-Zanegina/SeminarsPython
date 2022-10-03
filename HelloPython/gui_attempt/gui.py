@@ -24,6 +24,28 @@ def select_to_change():
 def select_to_delete():
     select = box.curselection()
 
+def clear_all():
+    if len(lbl_what_to_find) != 0: 
+        lbl_what_to_find.pop().grid_forget()
+
+    if len(lbl_ln) != 0: 
+        lbl_ln.pop().grid_forget()
+        lbl_n.pop().grid_forget()
+        lbl_t.pop().grid_forget()
+        lbl_d.pop().grid_forget()
+
+    if len(ent_ln) != 0: 
+        ent_ln.pop().grid_forget()
+        ent_n.pop().grid_forget()
+        ent_t.pop().grid_forget()
+        ent_d.pop().grid_forget()
+
+
+    if len(btn_find) != 0: 
+        btn_find.pop().grid_forget()
+    if len(btn_add) != 0: 
+        btn_add.pop().grid_forget()
+
     
 def get_entry_find():
     to_find = t_f.get()
@@ -47,34 +69,8 @@ def get_entry_find():
 
 
 def add_clicked():
-    # удаляем лэйблы, созданные ранее:
-    # и чужие, и свои
-
-    if len(lbl_what_to_find) != 0: 
-        lbl_what_to_find.pop().grid_forget()
-
-    if len(lbl_ln) != 0: 
-        lbl_ln.pop().grid_forget()
-        lbl_n.pop().grid_forget()
-        lbl_t.pop().grid_forget()
-        lbl_d.pop().grid_forget()
-
-    # удаляем виджет Entry, созданный ранее (если до этого нажималась кнопка Find contact):
-    
-    if len(ent_ln) != 0: 
-        ent_ln.pop().grid_forget()
-
-    if len(ent_ln) != 0: 
-        ent_ln.pop().grid_forget()
-        ent_n.pop().grid_forget()
-        ent_t.pop().grid_forget()
-        ent_d.pop().grid_forget() 
-
-    # удаляем кнопку Find, если она есть:
-    if len(btn_find) != 0: 
-        btn_find.pop().grid_forget()
-    if len(btn_add) != 0: 
-        btn_add.pop().grid_forget()
+    # удаляем все, что ранее было создано на странице:
+    clear_all()
 
     # создаем и запоминаем лэйблы для страницы Add contact:
 
