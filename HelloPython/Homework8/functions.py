@@ -58,12 +58,14 @@ def show_all():
         ui.view_info(i)
 
 def data_exp():
-    op = ui.get_info('Input code of operation: \n 1 - export to .csv \n 2 - export to .json \n 3 - export to .txt \n 4 - quit \n')
+    op = ui.get_info('Input code of operation: \n 1 - export to .csv \n 2 - export to .txt \n 3 - (export to .json) - not completed yet :( \n 4 - quit \n')
     if op == '1':
         exp_data.t_csv()
-    if op == '2':
-        exp_data.t_json()
-    if op == '3':
+    elif op == '2':
         exp_data.t_txt()
-    if op == '4':
+    # if op == '3':
+    #     exp_data.t_json()
+    elif op == '4':
         return 0
+    else:
+        ui.view_info('Input error')
