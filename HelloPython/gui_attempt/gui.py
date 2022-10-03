@@ -107,35 +107,7 @@ def add_clicked():
     btn_add.append(btn)
 
 def find_clicked():
-    # удаляем лэйблы, созданные ранее:
-    # и чужие, и свои
-
-    if len(lbl_ln) != 0: 
-        lbl_ln.pop().grid_forget()
-        lbl_n.pop().grid_forget()
-        lbl_t.pop().grid_forget()
-        lbl_d.pop().grid_forget()
-
-    if len(lbl_what_to_find) != 0: 
-        lbl_what_to_find.pop().grid_forget()
-
-    # удаляем виджеты Entry, созданные ранее (если до этого нажималась кнопка Add contact):
-    
-    if len(ent_ln) != 0: 
-        ent_ln.pop().grid_forget()
-        ent_n.pop().grid_forget()
-        ent_t.pop().grid_forget()
-        ent_d.pop().grid_forget() 
-
-    if len(ent_ln) != 0: 
-        ent_ln.pop().grid_forget()
-
-    # удаляем кнопку Add, если она есть:
-    
-    if len(btn_add) != 0: 
-        btn_add.pop().grid_forget()
-    if len(btn_find) != 0: 
-        btn_find.pop().grid_forget()
+    clear_all()
 
     # создаем и запоминаем лэйбл для страницы Find contact:
 
